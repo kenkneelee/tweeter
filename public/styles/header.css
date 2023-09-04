@@ -1,4 +1,4 @@
-header {
+.profileHeader {
   height:520px;
   width: 100%;
   display:flex;
@@ -9,7 +9,7 @@ header {
   background-color: #a7b4dc;
 }
 
-header div {
+.profileHeader div {
   display:flex;
   justify-content: center;
   align-items: center;
