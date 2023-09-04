@@ -1,0 +1,48 @@
+.tweets {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tweet {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  padding: 2rem;
+}
+
+.tweet:hover {
+  box-shadow: 2px 1px 8px 2px #000000;
+}
+
+.tweetHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.tweetHeader div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tweetContent {
+  padding: 1rem 1rem 2rem 1rem;
+}
+
+.tweetFooter {
+  display: flex;
+  justify-content: space-between;
+  border-top: 2px solid black;
+  padding: 1rem;
+}
+
+.tweetActions i {
+  color: #4056a1;
+}
+
+.tweetActions i:hover {
+  color: #ca9825;
+}
