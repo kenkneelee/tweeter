@@ -1,16 +1,16 @@
 .profileHeader {
-  height:520px;
+  height: 520px;
   width: 100%;
-  display:flex;
+  display: flex;
   flex-direction: column;
-  justify-content:end;
-  align-items:center;
+  justify-content: end;
+  align-items: center;
   background-image: url("../images/foggy-birds.png");
   background-color: #a7b4dc;
 }
 
 .profileHeader div {
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
