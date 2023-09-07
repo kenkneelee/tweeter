@@ -4,39 +4,52 @@
   gap: 1rem;
 }
 
-.tweet {
+/* tweet container */
+.tweets article {
   display: flex;
   flex-direction: column;
   border: 2px solid black;
   padding: 2rem;
 }
 
-.tweet:hover {
+.tweets article:hover {
   box-shadow: 7px 7px 2px 2px #a7b4dc;
 }
 
-.tweetHeader {
+/* tweet header */
+.tweets header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
 }
 
-.tweetHeader div {
+.tweets header div {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
+.tweets header > span {
+  color: #a7b4dc
+}
+
+/* tweet main content */
 .tweetContent {
   padding: 1rem 1rem 2rem 1rem;
 }
 
-.tweetFooter {
+/* tweet footer */
+.tweets footer {
   display: flex;
   justify-content: space-between;
   border-top: 2px solid black;
   padding: 1rem;
+}
+
+.tweetActions {
+  display: flex;
+  gap: 1rem;
 }
 
 .tweetActions i {

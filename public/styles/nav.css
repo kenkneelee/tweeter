@@ -1,21 +1,32 @@
 nav {
   height: 120px;
   width: 100vw;
-  background-color: #4056A1;
-  color: #FFFFFF;
+  background-color: #4056a1;
+  color: #ffffff;
   padding: 0 1.5em;
-  display:flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  position:fixed;
- }
- 
-nav span {
-  font-family: 'Bungee', cursive;
+  position: fixed;
 }
 
-.newTweet {
-  display:flex;
+/* site logo */
+nav span {
+  font-family: "Bungee", cursive;
+}
+
+/* "write a new tweet" section */
+nav > div {
+  display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+nav i {
+  color: #ca9825;
 }
