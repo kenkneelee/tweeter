@@ -9,13 +9,13 @@
   background-color: transparent;
 }
 
-.new-tweet form div {
+.new-tweet div {
   display:flex;
   justify-content: space-between;
   font-family: 'Bungee', cursive;
 }
 
-.new-tweet form div button {
+.new-tweet button {
   background-color: #4056A1;
   color: #f4f1ec;
 }
