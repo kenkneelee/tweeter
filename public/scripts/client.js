@@ -8,7 +8,7 @@
 const renderTweets = function (tweets) {
   tweets.forEach((tweet) => {
     const $tweet = createTweetElement(tweet);
-    $("#tweets-container").append($tweet);
+    $("#tweets-container").prepend($tweet);
   });
 };
 
@@ -45,15 +45,26 @@ const addFormEventHandler = function () {
     const tweetLength = $("#tweet-text").val().length;
     if (tweetLength !== undefined && tweetLength > 0 && tweetLength <= 140) {
       const seralizedData = $(this).serialize();
-      $.ajax("/tweets/", { method: "POST", data: seralizedData });
+      $.ajax("/tweets/", { method: "POST", data: seralizedData })
+        .then(function () {
+          loadTweets();
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     } else alert("Invalid tweet!");
   });
 };
 
 const loadTweets = function () {
-  $.ajax("/tweets/", { method: "GET" }).then(function (moreTweets) {
-    renderTweets(moreTweets);
-  });
+  $.ajax("/tweets/", { method: "GET" })
+    .then(function (moreTweets) {
+      $("#tweets-container").empty();
+      renderTweets(moreTweets);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 };
 
 loadTweets();
