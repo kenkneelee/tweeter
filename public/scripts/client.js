@@ -42,19 +42,33 @@ const createTweetElement = function (tweet) {
 };
 
 const addFormEventHandler = function () {
-  $("form").on("submit", function () {
+  $("form").on("submit", function (event) {
     event.preventDefault();
-    const tweetLength = $("#tweet-text").val().length;
-    if (tweetLength !== undefined && tweetLength > 0 && tweetLength <= 140) {
-      const seralizedData = $(this).serialize();
-      $.ajax("/tweets/", { method: "POST", data: seralizedData })
-        .then(function () {
-          loadTweets();
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    } else alert("Invalid tweet!");
+    const $form = $(this);
+    $("#error").slideUp(function () {
+      const tweetLength = $("#tweet-text").val().length;
+      if (tweetLength !== undefined && tweetLength > 0 && tweetLength <= 140) {
+        const seralizedData = $form.serialize();
+        $.ajax("/tweets/", { method: "POST", data: seralizedData })
+          .then(function () {
+            loadTweets();
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      } else {
+        if (tweetLength === undefined) {
+          $("#errorText").text("Invalid tweet");
+        } else if (tweetLength === 0) {
+          $("#errorText").text("Write some text!");
+        } else if (tweetLength > 140) {
+          $("#errorText").text(
+            "Too long. Conform to expectations or suffer the consequences."
+          );
+        }
+        $("#error").stop().slideDown().css("display", "flex");
+      }
+    });
   });
 };
 
