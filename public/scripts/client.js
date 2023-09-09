@@ -24,7 +24,7 @@ const createTweetElement = function (tweet) {
         <span>${tweet.user.handle}</span>
       </header>
     
-      <div class="tweetContent">${tweet.content.text}</div>
+      <div class="tweetContent"></div>
     
       <footer>
         <div>${timeago.format(tweet.created_at)}</div>
@@ -36,6 +36,8 @@ const createTweetElement = function (tweet) {
       </footer>
     </article>`
   );
+  // XSS prevention using jquery
+  $tweet.find(".tweetContent").text(tweet.content.text);
   return $tweet;
 };
 
