@@ -69,4 +69,9 @@ const createTweetElement = function (tweet) {
 // render tweets when DOM is ready to be modified
 $(document).ready(function () {
   renderTweets(data);
+  $("form").on("submit", function () {
+    event.preventDefault();
+    const seralizedData = $(this).serialize();
+    $.ajax("/tweets/", { method: "POST", data: seralizedData });
+  });
 });
