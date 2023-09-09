@@ -42,8 +42,11 @@ const createTweetElement = function (tweet) {
 const addFormEventHandler = function () {
   $("form").on("submit", function () {
     event.preventDefault();
-    const seralizedData = $(this).serialize();
-    $.ajax("/tweets/", { method: "POST", data: seralizedData });
+    const tweetLength = $("#tweet-text").val().length;
+    if (tweetLength !== undefined && tweetLength > 0 && tweetLength <= 140) {
+      const seralizedData = $(this).serialize();
+      $.ajax("/tweets/", { method: "POST", data: seralizedData });
+    } else alert("Invalid tweet!");
   });
 };
 
