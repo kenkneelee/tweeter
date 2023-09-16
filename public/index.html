@@ -63,33 +63,36 @@
       </div>
     </nav>
 
-    <!-- User profile -->
-    <header>
-      <div>
-        <img src="/images/profile-hex.png" alt="user profile photo" />
-      </div>
-      <div>
-        <h2>Kenny Lee</h2>
-      </div>
-    </header>
+    <div class="layout">
+      <!-- User profile -->
+      <header id="profileHeader">
+        <div>
+          <img src="/images/profile-hex.png" alt="user profile photo" />
+        </div>
+        <div>
+          <h2>Kenny Lee</h2>
+        </div>
+      </header>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <div id="error"><span>ERROR!</span><span id="errorText"></span></div>
-        <form action="/tweets/" method="POST">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div>
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
-
-      <!-- Container for individual tweets -->
-      <section class="tweets" id="tweets-container"></section>
-    </main>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <h2>Compose Tweet</h2>
+          <div id="error"><span>ERROR!</span><span id="errorText"></span></div>
+          <form action="/tweets/" method="POST">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <div>
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text"
+                >140</output
+              >
+            </div>
+          </form>
+        </section>
+        <!-- Container for individual tweets -->
+        <section class="tweets" id="tweets-container"></section>
+      </main>
+    </div>
   </body>
 </html>
