@@ -1,4 +1,5 @@
-body > header {
+#profileHeader {
+  /* desired 400px + 120px nav = 520px */
   height: 520px;
   width: 100%;
   display: flex;
@@ -9,8 +10,16 @@ body > header {
   background-color: #a7b4dc;
 }
 
-body > header div {
+#profileHeader div {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* desktop sizing */
+@media only screen and (min-width: 1024px) {
+  #profileHeader {
+    align-self: flex-start;
+    width: 40%;
+  }
 }
