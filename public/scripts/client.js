@@ -46,7 +46,7 @@ const addFormEventHandler = function () {
     event.preventDefault();
     const $form = $(this);
     $("#error").slideUp(function () {
-      const tweetLength = $("#tweet-text").val().length;
+      const tweetLength = $("#tweet-text").val().trim().length;
       if (tweetLength !== undefined && tweetLength > 0 && tweetLength <= 140) {
         const seralizedData = $form.serialize();
         $.ajax("/tweets/", { method: "POST", data: seralizedData })
