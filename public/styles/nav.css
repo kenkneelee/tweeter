@@ -30,3 +30,9 @@ nav a {
 nav i {
   color: #ca9825;
 }
+
+@media only screen and (min-width: 1024px) {
+  nav {
+    background-color: #424549;
+  }
+}
