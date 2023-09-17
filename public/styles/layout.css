@@ -1,6 +1,4 @@
 /*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
 html {
@@ -21,7 +19,7 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: "Source Sans 3", sans-serif;
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
@@ -38,14 +36,6 @@ main {
   background-color: #f4f1ec;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
-/* tablet sizing */
-@media only screen and (min-width: 768px) {
-}
-
 /* desktop sizing */
 @media only screen and (min-width: 1024px) {
   body {
@@ -59,10 +49,8 @@ main {
   }
 
   main {
-    padding: 0 5%;
+    padding: 1em 5%;
+    min-height: calc(100vh - 120px);
+    width: 75%;
   }
 }
-
-/* 1440p */
-/* 1440p 21:9 ultrawide */
-/* 4k */
