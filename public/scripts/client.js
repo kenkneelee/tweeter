@@ -1,9 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
 // converts each tweet object to html and adds it to the page
 const renderTweets = function (tweets) {
   tweets.forEach((tweet) => {
@@ -41,12 +35,16 @@ const createTweetElement = function (tweet) {
   return $tweet;
 };
 
+// logic for new tweet form submission
 const addFormEventHandler = function () {
   $("form").on("submit", function (event) {
+    // prevent page redirect upon submission
     event.preventDefault();
     const $form = $(this);
+    // hide error bar if it exists before running submit logic (callback)
     $("#error").slideUp(function () {
       const tweetLength = $("#tweet-text").val().trim().length;
+      // Successful tweet logic
       if (tweetLength !== undefined && tweetLength > 0 && tweetLength <= 140) {
         const seralizedData = $form.serialize();
         $.ajax("/tweets/", { method: "POST", data: seralizedData })
@@ -58,6 +56,8 @@ const addFormEventHandler = function () {
             console.log(error);
           });
       } else {
+        // Unsuccessful (error) logic
+        // Set error message while it is hidden
         if (tweetLength === undefined) {
           $("#errorText").text("Invalid tweet");
         } else if (tweetLength === 0) {
@@ -67,12 +67,14 @@ const addFormEventHandler = function () {
             "Too long. Conform to expectations or suffer the consequences."
           );
         }
+        // Show error message if applicable
         $("#error").stop().slideDown().css("display", "flex");
       }
     });
   });
 };
 
+// function to refresh tweets container with updated list of tweets (usually after new tweet)
 const loadTweets = function () {
   $.ajax("/tweets/", { method: "GET" })
     .then(function (moreTweets) {
@@ -84,9 +86,10 @@ const loadTweets = function () {
     });
 };
 
+// load existing tweets when page is loaded
 loadTweets();
 
-// render tweets when DOM is ready to be modified
+// add form event handler when DOM is ready to be modified
 $(document).ready(function () {
   addFormEventHandler();
 });
