@@ -4,7 +4,7 @@
   gap: 1rem;
 }
 
-/* tweet container */
+/* individual tweet container */
 .tweets article {
   display: flex;
   flex-direction: column;

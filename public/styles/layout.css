@@ -43,12 +43,15 @@ main {
     background-color: #a7b4dc;
   }
 
+  /* Layout shifter */
   .layout {
     flex-direction: row;
+    /* Add padding so navbar doesn't overlap */
     padding-top: 120px;
   }
 
   main {
+    /* 5% padding on each side to retain the '90% of container' requirement */
     padding: 1em 5%;
     min-height: calc(100vh - 120px);
     width: 75%;

@@ -1,9 +1,11 @@
+/* New tweet form section */
 .new-tweet {
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem;
 }
 
+/* Error box */
 #error {
   background-color: #dca7a7;
   display: flex;
@@ -15,6 +17,7 @@
   padding: 2rem;
   width: 100%;
   margin-bottom: 2rem;
+  /* Hidden by default */
   display: none;
 }
 
@@ -22,6 +25,7 @@
   font-family: "Source Sans 3", sans-serif;
 }
 
+/* Form */
 #tweet-text {
   width: 100%;
   border-bottom: 2px solid black;
@@ -39,6 +43,7 @@
   color: #f4f1ec;
 }
 
+/* For char counter use */
 .red {
   color: red;
 }
