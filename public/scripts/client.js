@@ -52,6 +52,7 @@ const addFormEventHandler = function () {
         $.ajax("/tweets/", { method: "POST", data: seralizedData })
           .then(function () {
             loadTweets();
+            $("#tweet-text").val("");
           })
           .catch(function (error) {
             console.log(error);
