@@ -51,6 +51,7 @@ const addFormEventHandler = function () {
           .then(function () {
             loadTweets();
             $("#tweet-text").val("");
+            $("output.counter").val(140);
           })
           .catch(function (error) {
             console.log(error);
@@ -58,14 +59,10 @@ const addFormEventHandler = function () {
       } else {
         // Unsuccessful (error) logic
         // Set error message while it is hidden
-        if (tweetLength === undefined) {
-          $("#errorText").text("Invalid tweet");
-        } else if (tweetLength === 0) {
+        if (!tweetLength) {
           $("#errorText").text("Write some text!");
         } else if (tweetLength > 140) {
-          $("#errorText").text(
-            "Too long. Conform to expectations or suffer the consequences."
-          );
+          $("#errorText").text("Tweet too long!");
         }
         // Show error message if applicable
         $("#error").stop().slideDown().css("display", "flex");
