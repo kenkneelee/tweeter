@@ -20,6 +20,6 @@
 @media only screen and (min-width: 1024px) {
   #profileHeader {
     align-self: flex-start;
-    width: 40%;
+    width: 25%;
   }
 }
