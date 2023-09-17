@@ -37,6 +37,7 @@
 /* tweet main content */
 .tweetContent {
   padding: 1rem 1rem 2rem 1rem;
+  overflow-wrap: break-word;
 }
 
 /* tweet footer */
